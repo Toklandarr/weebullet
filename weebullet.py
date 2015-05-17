@@ -11,7 +11,10 @@ REQUIRED = '_required'
 
 w.register('weebullet', 'Lefty', '0.3.1', 'BSD', 'weebullet pushes notifications from IRC to Pushbullet.', '', '')
 
-w.hook_print("", "irc_privmsg", "", 1, "priv_msg_cb", "")
+w.hook_print("", "notify_message", "", 1, "priv_msg_cb", "")
+w.hook_print("", "notify_private", "", 1, "priv_msg_cb", "")
+w.hook_print("", "notify_highlight", "", 1, "priv_msg_cb", "")
+
 w.hook_command(
     "send_push_note", #command
     "send a push note", # description
